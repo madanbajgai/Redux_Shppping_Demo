@@ -8,17 +8,17 @@ const CartContainer = () => {
   const { cartItems, total, quantity } = useSelector((store) => store.cart);
   if (quantity < 1) {
     return (
-      <section>
-        <h2>Your bag</h2>
+      <section className="p-10 text-center">
+        <h2 className="font-bold text-gray-800 text-xl" >Your Cart</h2>
         <h4>is currently empty.</h4>
       </section>
     );
   }
 
   return (
-    <section>
-      <header>
-        <h2>Your bag</h2>
+    <section className="bg-green-50">
+      <header className="border-b">
+        <h2 className="py-4 text-lg font-bold text-center">Your Cart</h2>
       </header>
       <div>
         {cartItems.map((item) => (
@@ -27,12 +27,12 @@ const CartContainer = () => {
       </div>
       <footer>
         <hr />
-        <h4>
+        <h4 className="text-right font-bold text-xl p-3">
           Total: <span>${total.toFixed(2)}</span>
         </h4>
         <button
           onClick={() => dispatch(openModal())}
-          className="border border-red-600 p-2 rounded-md m-3"
+          className="border border-emerald-500 p-2 rounded-md m-3 float-right"
         >
           Clear cart
         </button>

@@ -20,11 +20,15 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <div>Loading.....</div>;
+    return (
+      <div className="text-4xl font-bold h-screen grid place-items-center">
+        <h3>Loading.....</h3>
+      </div>
+    );
   }
 
   return (
-    <div className="max-w-[90vw] mx-auto ">
+    <div className="max-w-[900px] mx-auto ">
       {isOpen && <Modal />}
       <Navbar />
       <CartContainer />
